@@ -1,0 +1,35 @@
+﻿@model Amar_Pharmacy1.Models.Login1
+@{
+    ViewBag.Title = "Login1";
+
+
+
+
+}
+ 
+<body style="background-color:#d4adf0">
+    @using (Html.BeginForm()) {
+    <form method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><b>  Email address</b></label>
+            @*<input type="text" class="form-control" id="exampleInputEmail1" name="Email">*@
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            <div id="emailHelp" class="form-text"> We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"><b> Password</b> </label>
+            @*<input type="password" class="form-control" id="exampleInputPassword1" name="UserPassword">*@
+            @Html.PasswordFor(x => x.UserPassword, new { @class = "form-control" })
+        </div>
+        <div class="mb-3 form-check">
+            <b> @Html.ActionLink("Seller", "SellerLogin", "Admin") </b>
+        </div>
+        <input type="submit"  value="Login" class="btn btn-success "/>
+
+            @*  <b> @Html.ActionLink("Submit", "Medicine", "Admin") </b>*@
+        <div class="form-group">
+            <p style="color:red">@ViewBag.ErrorMessage</p>
+        </div>
+    </form>
+    }
+</body>

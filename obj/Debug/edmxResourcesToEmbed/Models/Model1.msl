@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlinepharmacyModelStoreContainer" CdmEntityContainer="OnlinepharmacyEntities">
+    <EntitySetMapping Name="CategoryTB1">
+      <EntityTypeMapping TypeName="OnlinepharmacyModel.CategoryTB1">
+        <MappingFragment StoreEntitySet="CategoryTB1">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicineTb1">
+      <EntityTypeMapping TypeName="OnlinepharmacyModel.MedicineTb1">
+        <MappingFragment StoreEntitySet="MedicineTb1">
+          <ScalarProperty Name="MedCode" ColumnName="MedCode" />
+          <ScalarProperty Name="MedName" ColumnName="MedName" />
+          <ScalarProperty Name="MedPrice" ColumnName="MedPrice" />
+          <ScalarProperty Name="MedStock" ColumnName="MedStock" />
+          <ScalarProperty Name="MedExpDate" ColumnName="MedExpDate" />
+          <ScalarProperty Name="MedCategory" ColumnName="MedCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="OnlinepharmacyModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

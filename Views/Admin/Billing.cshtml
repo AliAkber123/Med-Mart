@@ -1,0 +1,86 @@
+﻿@model List<Amar_Pharmacy1.Models.Billing>
+@{
+   
+     
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        @Html.ActionLink("OnlinePharmacy", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b> @Html.ActionLink("Billing", "Billing", "Admin") </b></a>
+                        <img src="~/Content/download2.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b> @Html.ActionLink("Logout", "SellerLogin", "Admin")</b></a>
+                        <img src="~/Content/logout-11551056293ans77of4wy-removebg-preview.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <p>
+        <h2>Billing</h2>
+    </p>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+
+
+                <th>Medicine Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Billing Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bill in ViewBag.Billing)
+            {
+                <tr>
+                    <td>@bill.MedName</td>
+                    <td>@bill.MedQuantity</td>
+                    <td>@bill.Price</td>
+                    <td>@bill.BillingDate</td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+    <b> @Html.ActionLink("Add", "CreateBilling", "Admin") </b>
+    <b> @Html.ActionLink("Edit", "UpdateBilling", "Admin") </b>
+    <b> @Html.ActionLink("Delete", "DeleteBilling", "Admin") </b>
+
+</body>
+</html>
+
+

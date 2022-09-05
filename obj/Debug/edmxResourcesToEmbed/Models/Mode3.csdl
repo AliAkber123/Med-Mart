@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="medMartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Login1">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="MedName" />
+    </Key>
+    <Property Name="MedName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedStock" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="MedExpDate" Type="DateTime" Precision="0" />
+    <Property Name="MedCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Seller">
+    <Key>
+      <PropertyRef Name="SellerPassword" />
+    </Key>
+    <Property Name="SellerAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SellerName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SellerEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SellerPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SellerDOB" Type="DateTime" Precision="0" />
+    <Property Name="SellerGender" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="medMartEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Login1" EntityType="Self.Login1" />
+    <EntitySet Name="Medicines" EntityType="Self.Medicine" />
+    <EntitySet Name="Sellers" EntityType="Self.Seller" />
+    <EntitySet Name="Billings" EntityType="medMartModel.Billing" />
+  </EntityContainer>
+  <EntityType Name="Billing">
+    <Key>
+      <PropertyRef Name="MedName" />
+    </Key>
+    <Property Name="MedName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MedQuantity" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="BillingDate" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,132 @@
+﻿ 
+@{
+    ViewBag.Title = "Categories";
+}
+@using (Html.BeginForm()) {  
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        @Html.ActionLink("OnlinePharmacy", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        <a class="navbar-brand" href="_about.cshtml">
+
+                            <b>  @Html.ActionLink("Medicines", "Index", "Home")</b>
+                        </a>
+                        <img src="~/Content/1000_F_193310951_1xon9OCof12nbJaWcx6ezGXMbLnR5RPx-removebg-preview.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+
+
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b>  @Html.ActionLink("Categories", "Categories", "Home") </b></a>
+                        <img src="~/Content/download-removebg-preview.png" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b> @Html.ActionLink("Seller", "Seller", "Home") </b></a>
+                        <img src="~/Content/download2.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b> @Html.ActionLink("Logout", "Login", "Home")</b></a>
+                        <img src="~/Content/logout-11551056293ans77of4wy-removebg-preview.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+
+        </div>
+        <div class="mt-5">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-10 bg-white">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-bg-blur">
+                            <div class="form-61">
+                                <h4 class="form-head">Add Category</h4>
+                                <form action="~/Views/Home/Categories.cshtml" method="post">
+                                    <div class="form-group">
+                                         
+                                        <input type="text" class="form-control" id="txtId" placeholder="Category ID" name="CatId">
+                                        @Html.ValidationMessage("CatId   ", "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                         
+                                        <input type="text" class="form-control" id="txtName" placeholder="Category Name" name="CatName">
+                                        @Html.ValidationMessage("CatName", "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col d-grid ">
+                                        <button id="SaveBtn" type="button" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                                    </div>
+                                      
+                                    <div class="row">
+                                        <div class="col d-grid ">
+                                            <button id="EditBtn" type="button" class="btn btn-success" style="padding:5px 10px;">Edit</button>
+
+                                        </div>
+                                       
+                                        <div class="col d-grid ">
+                                            <button id="DeleteBtn" type="button" class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+                             
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <h2>Catagory List</h2>
+                            <asp:GridView id="MedicineList" class="table" runat="server"></asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                               ConnectionString="<%$ ConnectionStrings:ConnectionString  %>"
+                                               SelectCommand="SELECT * FROM [CategoryTB1]"></asp:SqlDataSource> 
+                        </div>
+
+
+                    </div>
+
+
+            <div class="col-md-1">
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+}
+ 
+
+

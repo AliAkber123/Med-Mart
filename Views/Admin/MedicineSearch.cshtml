@@ -1,0 +1,54 @@
+﻿@model List<Amar_Pharmacy1.Models.Medicine>
+@{
+    ViewBag.Title = "Medicine Search";
+}
+
+
+<h2>Medicine Search</h2>
+
+<form action="/Admin/MedicineSearch">
+    <div class="form-group">
+
+        <label for="">Search</label>
+        <input type="text" class="form-control" id="txtsearch" placeholder="search" name="search">
+
+    </div>
+
+    <p></p>
+    <button class="btn btn-success">Submit</button>
+    </p>
+</form>
+
+
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th>MedName</th>
+            <th>MedStock</th>
+            <th>Price</th>
+            <th>Med Expiry Date</th>
+            <th>MedCategory</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var meds in Model)
+        {
+            <tr>
+                <td>@meds.MedName</td>
+                <td>@meds.MedStock</td>
+                <td>@meds.Price</td>
+                <td>@meds.MedExpDate</td>
+                <td>@meds.MedCategory</td>
+
+
+
+            </tr>
+        }
+
+
+
+
+    </tbody>
+</table>
+<b> @Html.ActionLink("Go back", "Medicine", "Admin") </b>

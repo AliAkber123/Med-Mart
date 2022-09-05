@@ -1,0 +1,101 @@
+﻿@model List<Amar_Pharmacy1.Models.Medicine>
+@{
+    ViewBag.Title = "Create New Medicine";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateMedicine</title>
+</head>
+<body background="~/Content/304896049_600128658279180_102818864862598403_n1.png">
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+
+            </div>
+
+            <div class="mt-5">
+                <div class="col-md-1">
+
+                </div>
+
+                @*  <div class="col-md-10 bg-white">*@
+                <div class="row">
+                    <div class="col-6">
+                        <form action="/Admin/CreateMedicine" method="post">
+                            @*<div class="row">*@
+                            @* <div class="col p-2 bg-light border">*@
+                            <b>Medicine Name</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Medicine Name" name="MedName">
+                                @Html.ValidationMessage("MedName", "", new { @class = "text-danger" })
+                            </p>
+
+                            @*</div>*@
+                            @*<div class="col p-2 bg-light border">*@
+                            <b>Medicine Stock</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Medicine Stock" name="MedStock">
+                                @Html.ValidationMessage("MedStock", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+
+                            @* </div>*@
+                            @*<div class="row">*@
+                            @*<div class="col p-2 bg-light border">*@
+                            <b>Medicine Price</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Medicine Price" name="Price">
+                                @Html.ValidationMessage("Price", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+                            @*<div class="col p-2 bg-light border">*@
+                            <b>Date Time</b>
+                            <p>
+                                <input type="date" class="form-control" placeholder="Date Time" name="MedExpDate">
+                                @Html.ValidationMessage("MedExpDate", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+                            @* </div>*@
+                            @*<div class="row ">*@
+                            @*<div class="col-6 p-2 bg-light border">*@
+                            <b>Medicine Category</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Medicine Category" name="MedCategory">
+                                @Html.ValidationMessage("MedCategory", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+                            @*</div>*@
+
+                            <input type="submit" value="Save" class="btn btn-primary ">
+
+
+                        </form>
+                        @* <div class="row">
+                                <div class="col d-grid ">
+                                    <button id="EditBtn" type="button" class="btn btn-success" style="padding:5px 10px;">Edit</button>
+
+                                </div>
+
+                                <div class="col d-grid">
+                                    <button id="DeleteBtn" type="button" class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>*@
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    @*</div>*@
+</body>
+</html>

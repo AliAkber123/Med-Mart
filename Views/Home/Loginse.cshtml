@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Login Seller";
+
+}
+<body style="background-color:#fca7cc">
+    <form>
+        <div class="mb-3">
+            <b>  <label for="exampleInputEmail1" class="form-label">Email address</label> </b>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <b><label for="exampleInputPassword1" class="form-label">Password</label></b>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <b>  @Html.ActionLink("Admin", "Login", "Home")</b>
+        </div>
+        <button type="submit" style="background-color:darkgray" class="btn btn-primary ">
+            <b>  @Html.ActionLink("Submit", "Billing", "Home")</b>
+        </button>
+    </form>
+
+     </body>
+

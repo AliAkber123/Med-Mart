@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlinepharmacyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CategoryTB1">
+    <Key>
+      <PropertyRef Name="CatId" />
+    </Key>
+    <Property Name="CatId" Type="Int32" Nullable="false" />
+    <Property Name="CatName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MedicineTb1" Relationship="Self.FK2" FromRole="CategoryTB1" ToRole="MedicineTb1" />
+  </EntityType>
+  <EntityType Name="MedicineTb1">
+    <Key>
+      <PropertyRef Name="MedCode" />
+    </Key>
+    <Property Name="MedCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedPrice" Type="Int32" Nullable="false" />
+    <Property Name="MedStock" Type="Int32" Nullable="false" />
+    <Property Name="MedExpDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MedCategory" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CategoryTB1" Relationship="Self.FK2" FromRole="MedicineTb1" ToRole="CategoryTB1" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK2">
+    <End Role="CategoryTB1" Type="Self.CategoryTB1" Multiplicity="1" />
+    <End Role="MedicineTb1" Type="Self.MedicineTb1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryTB1">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="MedicineTb1">
+        <PropertyRef Name="MedCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlinepharmacyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CategoryTB1" EntityType="Self.CategoryTB1" />
+    <EntitySet Name="MedicineTb1" EntityType="Self.MedicineTb1" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <AssociationSet Name="FK2" Association="Self.FK2">
+      <End Role="CategoryTB1" EntitySet="CategoryTB1" />
+      <End Role="MedicineTb1" EntitySet="MedicineTb1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

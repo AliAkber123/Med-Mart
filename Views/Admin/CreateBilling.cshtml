@@ -1,0 +1,98 @@
+﻿
+@model List<Amar_Pharmacy1.Models.Billing>
+@{
+    ViewBag.Title = "Add New Billing";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Billing</title>
+</head>
+<body background="~/Content/304896049_600128658279180_102818864862598403_n1.png">
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+
+            </div>
+
+            <div class="mt-5">
+                <div class="col-md-1">
+
+                </div>
+
+                @*  <div class="col-md-10 bg-white">*@
+                <div class="row">
+                    <div class="col-6">
+                        <form action="/Admin/CreateBilling" method="post">
+                            @*<div class="row">*@
+                            @* <div class="col p-2 bg-light border">*@
+                            <b>Medicine Name</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Medicine Name" name="MedName">
+                                @Html.ValidationMessage("MedName", "", new { @class = "text-danger" })
+                            </p>
+
+                            @*</div>*@
+                            @*<div class="col p-2 bg-light border">*@
+                            <b>Quantity</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Quantity" name="MedQuantity">
+                                @Html.ValidationMessage("MedQuantity", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+
+                            @* </div>*@
+                            @*<div class="row">*@
+                            @*<div class="col p-2 bg-light border">*@
+                            <b>Medicine Price</b>
+                            <p>
+                                <input type="text" class="form-control" placeholder="Medicine Price" name="Price">
+                                @Html.ValidationMessage("Price", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+                            @*<div class="col p-2 bg-light border">*@
+                            <b>Billing Date Time</b>
+                            <p>
+                                <input type="date" class="form-control" placeholder="Date Time" name="BillingDate">
+                                @Html.ValidationMessage("BillingDate", "", new { @class = "text-danger" })
+                            </p>
+                            @*</div>*@
+                            @* </div>*@
+                            @*<div class="row ">*@
+                            @*<div class="col-6 p-2 bg-light border">*@
+                          
+                            @*</div>*@
+                            @*</div>*@
+
+                            <input type="submit" value="Save" class="btn btn-primary ">
+
+
+                        </form>
+                        @* <div class="row">
+                                <div class="col d-grid ">
+                                    <button id="EditBtn" type="button" class="btn btn-success" style="padding:5px 10px;">Edit</button>
+
+                                </div>
+
+                                <div class="col d-grid">
+                                    <button id="DeleteBtn" type="button" class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>*@
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    @*</div>*@
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿
+
+@model List<Amar_Pharmacy1.Models.Seller>
+@{
+    ViewBag.Title = "Update Medicine";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateSeller</title>
+</head>
+<body background="~/Content/304896049_600128658279180_102818864862598403_n1.png">
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+
+            </div>
+
+            <div class="mt-5">
+                <div class="col-md-1">
+
+                </div>
+
+               
+                    <div class="row">
+                        <div class="col-6">
+                            <form action="/Admin/UpdateSeller" method="post">
+                                <b>Seller Address</b><p>
+                                    <input type="text" class="form-control" placeholder="Seller Address" name="SellerAddress">
+
+                                    @*  @Html.ValidationMessage("MedName", "", new { @class = "text-danger" })*@
+                                </p>
+                                <b>Seller Name</b><p>
+                                    <input type="text" class="form-control" placeholder="Seller Name" name="SellerName">
+                                    @* @Html.ValidationMessage("MedStock", "", new { @class = "text-danger" })*@
+                                </p>
+                                <b>Seller Email</b><p>
+                                    <input type="email" class="form-control" placeholder="Seller Email" name="SellerEmail">
+                                    @* @Html.ValidationMessage("SellerEmail", "", new { @class = "text-danger" })*@
+                                </p>
+                                <b>Seller Password</b><p>
+                                    <input type="password" class="form-control" placeholder="Seller Password" name="SellerPassword">
+                                    @* @Html.ValidationMessage("Price", "", new { @class = "text-danger" })*@
+                                </p>
+                                    <b>Seller DateofBirth</b>
+                                <p>
+                                    <input type="date" class="form-control" placeholder="Seller DateofBirth" name="SellerDOB">
+                                    @* @Html.ValidationMessage("MedExpDate", "", new { @class = "text-danger" })*@
+                                </p>
+                                <b>Seller Gender</b><p>
+                                    <input type="text" class="form-control" placeholder="Seller Gender" name="SellerGender">
+                                    @*  @Html.ValidationMessage("MedCategory", "", new { @class = "text-danger" })*@
+
+                                </p>
+                                <input type="submit" value="Update" class="btn btn-primary ">
+
+
+                            </form>
+                            @* <div class="row">
+                                    <div class="col d-grid ">
+                                        <button id="EditBtn" type="button" class="btn btn-success" style="padding:5px 10px;">Edit</button>
+
+                                    </div>
+
+                                    <div class="col d-grid">
+                                        <button id="DeleteBtn" type="button" class="btn btn-danger">Delete</button>
+                                    </div>
+                                </div>*@
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlinepharmacyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoryTB1">
+    <Key>
+      <PropertyRef Name="CatId" />
+    </Key>
+    <Property Name="CatId" Type="int" Nullable="false" />
+    <Property Name="CatName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MedicineTb1">
+    <Key>
+      <PropertyRef Name="MedCode" />
+    </Key>
+    <Property Name="MedCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MedName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MedPrice" Type="int" Nullable="false" />
+    <Property Name="MedStock" Type="int" Nullable="false" />
+    <Property Name="MedExpDate" Type="date" Nullable="false" />
+    <Property Name="MedCategory" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK2">
+    <End Role="CategoryTB1" Type="Self.CategoryTB1" Multiplicity="1" />
+    <End Role="MedicineTb1" Type="Self.MedicineTb1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryTB1">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="MedicineTb1">
+        <PropertyRef Name="MedCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlinepharmacyModelStoreContainer">
+    <EntitySet Name="CategoryTB1" EntityType="Self.CategoryTB1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicineTb1" EntityType="Self.MedicineTb1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK2" Association="Self.FK2">
+      <End Role="CategoryTB1" EntitySet="CategoryTB1" />
+      <End Role="MedicineTb1" EntitySet="MedicineTb1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

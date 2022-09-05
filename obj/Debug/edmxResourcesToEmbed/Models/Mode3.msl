@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="medMartModelStoreContainer" CdmEntityContainer="medMartEntities1">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="medMartModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login1">
+      <EntityTypeMapping TypeName="medMartModel.Login1">
+        <MappingFragment StoreEntitySet="Login1">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicines">
+      <EntityTypeMapping TypeName="medMartModel.Medicine">
+        <MappingFragment StoreEntitySet="Medicine">
+          <ScalarProperty Name="MedName" ColumnName="MedName" />
+          <ScalarProperty Name="MedStock" ColumnName="MedStock" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MedExpDate" ColumnName="MedExpDate" />
+          <ScalarProperty Name="MedCategory" ColumnName="MedCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sellers">
+      <EntityTypeMapping TypeName="medMartModel.Seller">
+        <MappingFragment StoreEntitySet="Seller">
+          <ScalarProperty Name="SellerAddress" ColumnName="SellerAddress" />
+          <ScalarProperty Name="SellerName" ColumnName="SellerName" />
+          <ScalarProperty Name="SellerEmail" ColumnName="SellerEmail" />
+          <ScalarProperty Name="SellerPassword" ColumnName="SellerPassword" />
+          <ScalarProperty Name="SellerDOB" ColumnName="SellerDOB" />
+          <ScalarProperty Name="SellerGender" ColumnName="SellerGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Billings">
+      <EntityTypeMapping TypeName="medMartModel.Billing">
+        <MappingFragment StoreEntitySet="Billing">
+          <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MedQuantity" ColumnName="MedQuantity" />
+          <ScalarProperty Name="MedName" ColumnName="MedName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

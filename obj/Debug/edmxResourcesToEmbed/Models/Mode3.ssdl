@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="medMartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Billing">
+    <Key>
+      <PropertyRef Name="MedName" />
+    </Key>
+    <Property Name="MedName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MedQuantity" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="BillingDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'medMart.dbo.dummy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="dummy">
+          <Property Name="MedName" Type="varchar" MaxLength="250" />
+          <Property Name="MedQuantity" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Login1">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="MedName" />
+    </Key>
+    <Property Name="MedName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MedStock" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="MedExpDate" Type="date" />
+    <Property Name="MedCategory" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Seller">
+    <Key>
+      <PropertyRef Name="SellerPassword" />
+    </Key>
+    <Property Name="SellerAddress" Type="varchar" MaxLength="250" />
+    <Property Name="SellerName" Type="varchar" MaxLength="200" />
+    <Property Name="SellerEmail" Type="varchar" MaxLength="200" />
+    <Property Name="SellerPassword" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SellerDOB" Type="date" />
+    <Property Name="SellerGender" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="medMartModelStoreContainer">
+    <EntitySet Name="Billing" EntityType="Self.Billing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login1" EntityType="Self.Login1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seller" EntityType="Self.Seller" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

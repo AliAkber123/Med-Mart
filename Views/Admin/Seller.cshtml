@@ -1,0 +1,161 @@
+﻿@model List<Amar_Pharmacy1.Models.Seller>
+@{
+    ViewBag.Title = "Seller";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        @Html.ActionLink("OnlinePharmacy", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        <a class="navbar-brand" href="_about.cshtml">
+
+                            <b>  @Html.ActionLink("Medicines", "Medicine", "Admin")</b>
+                        </a>
+                        <img src="~/Content/1000_F_193310951_1xon9OCof12nbJaWcx6ezGXMbLnR5RPx-removebg-preview.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+
+                    </li>
+                
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b> @Html.ActionLink("Seller", "Seller", "Admin") </b></a>
+                        <img src="~/Content/download2.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="navbar-brand" href="#"> <b> @Html.ActionLink("Logout", "NewLogIn", "Admin")</b></a>
+                        <img src="~/Content/logout-11551056293ans77of4wy-removebg-preview.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    @* <div class="container-fluid">
+            <div class="row">
+
+            </div>
+            <div class="mt-5">
+                <div class="col-md-1">
+
+                </div>
+
+                    <div class="col-md-10 bg-white">
+                        <div class="row">
+                            <div class="col-6">
+                                <form action="/Admin/CreateSeller" method="post">
+                                    <div class="row">
+                                        <div class="col p-2 bg-light border">
+                                            <input type="text" class="form-control" placeholder="Seller Address" name="SellerAddress">
+                                            @Html.ValidationMessage("SellerAddress", "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col p-2 bg-light border">
+                                            <input type="text" class="form-control" placeholder="Seller Name" name="SellerName">
+                                            @Html.ValidationMessage("SellerName", "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col p-2 bg-light border">
+                                            <input type="email" class="form-control" placeholder="Seller Email" name="SellerEmail">
+                                            @Html.ValidationMessage("SellerEmail", "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col p-2 bg-light border">
+                                            <input type="password" class="form-control" placeholder="Seller Password" name="SellerPassword">
+                                            @Html.ValidationMessage("SellerPassword", "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col   p-2 bg-light border">
+
+                                            <input type="date" class="form-control" placeholder="Seller DateofBirth" name="SellerDOB">
+                                            @Html.ValidationMessage("SellerDOB", "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col  p-2 bg-light border">
+                                            <input type="text" class="form-control" placeholder="Seller Gender" name="SellerGender">
+                                            @Html.ValidationMessage("SellerGender", "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <input type="submit" value="Save" class="btn btn-primary ">
+
+                                </form>
+                                @*  <div class="row">
+                <div class="col d-grid ">
+                    <button id="EditBtn" type="button" class="btn btn-success">Edit</button>
+
+                </div>
+
+                <div class="col d-grid ">
+                    <button id="DeleteBtn" type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+                            </div>
+                            <div class="col-6">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                    </div>
+            </div>
+
+        </div>*@
+
+</body>
+</html>
+<p>
+    <h2>Seller </h2>
+</p>
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th>Seller Name</th>
+            <th>Seller Email</th>
+            <th>Seller Password </th>
+            <th>Seller Address</th>
+            <th>Seller DOB</th>
+            <th>Seller Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sell in ViewBag.Seller)
+        {
+            <tr>
+                <td>@sell.SellerName</td>
+                <td>@sell.SellerEmail</td>
+                <td>@sell.SellerPassword</td>
+                <td>@sell.SellerAddress</td>
+                <td>@sell.SellerDOB</td>
+                <td>@sell.SellerGender</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+<b> @Html.ActionLink("Add", "CreateSeller", "Admin") </b>
+<b> @Html.ActionLink("Edit", "UpdateSeller", "Admin") </b>
+<b> @Html.ActionLink("Delete", "DeleteSeller", "Admin") </b>
+
+
